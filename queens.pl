@@ -96,10 +96,10 @@ crossover(S1,[S2|Migl],Incroci):-
     /*S1 e S2 sono una combinazione a testa, scrivendo così vale solo per 4Regine,
     * se vuoi fare più di 4 regine devi aggiungere altri campi in S1,S2,R1,R2
     */
-    [A1,A2,A3,A4,A5] = S1, 
-    [C1,C2,C3,C4,C5] = S2,
-    R1 = [A1,A2,C3,C4,C5],
-    R2 = [C1,C2,A3,A4,A5], 
+    [A1,A2,A3,A4] = S1, 
+    [C1,C2,C3,C4] = S2,
+    R1 = [A1,A2,C3,C4],
+    R2 = [C1,C2,A3,A4], 
     crossover(S1,Migl,AltriIncroci),
     union([R1,R2],AltriIncroci,Incroci).
 
@@ -108,8 +108,8 @@ crossover(S1,[S2|Migl],Incroci):-
 /*tengo sia l'individuo non mutato (F) sia quello mutato (N)*/
 mutazione([],[]).
 mutazione([F|Figli], [F,N|NuovaPopolazione]):-
-    L is 5, 
-    /* modificare se vuoi aumentare le regine */
+    L is 4, 
+    /* modificare se vuoi aumentare le regine, aumentare L*/
     random_between(1,L,Rand1),
     /* random_between(L,U,R), Binds R to a random integer in [L,U] (i.e., including both L and U). Fails silently if U<L. */
     random_between(1,L,Rand2),
