@@ -1,3 +1,5 @@
+/* 4-Queens-Problem Genetic-Algorithm */
+ 
 use_module(library(lists)).
 /* pongo come ipotesi che non stanno su stessa colonna, array di 4 valori,
 per aumentare vanno modificate mutation e crossover*/
